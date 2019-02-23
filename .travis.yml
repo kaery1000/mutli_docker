@@ -14,7 +14,7 @@ after_success:  #building prod version of the images to push them to docker hub
   - docker build -t kaery1000/mutli_server ./server
   - docker build -t kaery1000/mutli_worker ./worker
   #log in to the docker CLI
-  - echo "$DOCKER-PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin #this is how we login in one single command
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin #this is how we login in one single command
   # pushing to docker hub
   - docker push kaery1000/mutli_client
   - docker push kaery1000/mutli_nginx
